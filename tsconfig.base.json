@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@org/lib//common-ui": ["lib/common-ui/src/index.js"],
+      "@org/lib//common-ui/server": ["lib/common-ui/src/server.js"],
+      "@org/lib/common-validate": ["lib/common-validate/src/index.js"],
+      "@org/lib/common-validate/server": ["lib/common-validate/src/server.js"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

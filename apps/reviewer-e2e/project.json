@@ -1,0 +1,29 @@
+{
+  "name": "reviewer-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/reviewer-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/reviewer-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "reviewer:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "reviewer:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/reviewer-e2e/**/*.js"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["reviewer"]
+}
